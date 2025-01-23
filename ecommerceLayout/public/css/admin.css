@@ -1,0 +1,324 @@
+@charset "UTF-8";
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* General Style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --montserrat: 'Montserrat', sans-serif;
+    --bg-branco: #F5F5F7;
+    --preto-75: #000000bf;
+}
+
+body {
+    height: 100vh;
+    background-color: #fff;
+    font-family: var(--montserrat);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 86vw;
+    padding: 20px;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--preto-75);
+    transition: 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+}
+
+::-webkit-scrollbar-thumb:focus {
+    border-radius: 20px;
+}
+
+/* Main */
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+    flex-wrap: wrap; 
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 29vw;
+}
+
+.leftSide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 5vh;
+    text-align: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 5em;
+    height: auto;
+}
+
+.logo-container h1 {
+    color: #ff3d00;
+    font-size: 5rem;
+    margin-top: 10px;
+}
+
+.login-box {
+    width: 100%;
+    background: #ffffff80;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    text-align: left;
+}
+
+.login-box h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.login-box p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 10px;
+    border: 2px solid #00000085;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: var(--montserrat);
+    outline: none;
+    transition: border-color 0.3s, padding-top 0.3s;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    background: white;
+    padding: 0 5px;
+    font-size: 1rem;
+    color: #777;
+    pointer-events: none;
+    transition: top 0.3s, transform 0.3s, font-size 0.3s, color 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #ff3d00;
+}
+
+.input-group.focused label,
+.input-group.filled label {
+    top: 0;
+    transform: translateY(-50%);
+    font-size: 0.85rem;
+    color: #ff3d00;
+}
+
+.password-group {
+    position: relative;
+}
+
+.password-group .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #777;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.password-group .toggle-password:hover {
+    color: #ff3d00;
+}
+
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.options label {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.options .forgot-password {
+    font-size: 0.9rem;
+    color: #ff3d00;
+    text-decoration: none;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff3d00;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 10px;
+    font-family: var(--montserrat);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #9b3114;
+}
+
+.character img {
+    width: 10em;
+    height: auto;
+    margin-top: 20px;
+}
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    font-family: var(--montserrat);
+    font-size: 1rem;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    padding-left: 35px; 
+    color: #555;
+}
+
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-checkbox .checkmark {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    transition: all 0.3s ease;
+}
+
+.custom-checkbox input:checked ~ .checkmark {
+    background-color: #ff3d00;
+    border-color: #ff3d00;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.custom-checkbox .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 4px;
+    top: 0px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.custom-checkbox input:checked ~ .checkmark:after {
+    display: block;
+    animation: checkmark-draw 0.3s ease forwards;
+}
+
+@keyframes checkmark-draw {
+    from {
+        opacity: 0;
+        transform: rotate(45deg) scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(45deg) scale(1);
+    }
+}
+
+.custom-checkbox:hover .checkmark {
+    background-color: #eee;
+    border-color: #bbb;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; 
+    }
+
+    .login-box {
+        max-width: 100%;
+    }
+
+    .logo-container h1 {
+        font-size: 2.5rem;
+    }
+
+    .character img {
+        width: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-container h1 {
+        font-size: 2rem;
+    }
+
+    .login-box {
+        padding: 15px;
+    }
+
+    .btn-login {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}
