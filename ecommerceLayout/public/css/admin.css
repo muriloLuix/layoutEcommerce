@@ -62,7 +62,7 @@ main {
     align-items: center;
     justify-content: center;
     width: 100%;
-    gap: 29vw;
+    gap: 25vw;
 }
 
 .leftSide {
@@ -92,6 +92,7 @@ main {
     color: #ff3d00;
     font-size: 5rem;
     margin-top: 10px;
+    font-weight: 700;
 }
 
 .login-box {
@@ -103,8 +104,9 @@ main {
     text-align: left;
 }
 
-.login-box h2 {
-    font-size: 2.5rem;
+.login-box h2,
+.modal-title {
+    font-size: 2.5rem !important;
     font-weight: bold;
     font-style: italic;
     color: #333;
@@ -126,7 +128,7 @@ main {
     width: 100%;
     padding: 12px 10px;
     border: 2px solid #00000085;
-    border-radius: 10px;
+    border-radius: 10px !important;
     font-size: 1rem;
     font-family: var(--montserrat);
     outline: none;
@@ -322,3 +324,94 @@ main {
         padding: 8px;
     }
 }
+
+
+/* Bootstrap */
+
+.modal{
+    font-family: var(--montserrat) !important;
+}
+
+.btnBootstrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 2vh;
+    background: none !important;
+    border: none !important;
+    color: #ff3d00;
+    transition: all .3s ease;
+}
+
+.btnBootstrap:hover{
+    color: #9b3114;
+}
+
+.modal.show .modal-dialog {
+    transform: none;
+    width: 50vw !important;
+    max-width: none;
+}
+
+.btnEnviar{
+    background-color: #ff3d00;
+    border: none;
+    transition: all .3s ease;
+}
+
+.btnEnviar:hover{
+    background-color: #9b3114;
+}
+
+.form-control:focus{
+    box-shadow: none;
+    border: 2px solid #ff3d00;
+}
+
+    /* Floating Labels Custom Style */
+    .form-floating {
+        position: relative;
+    }
+
+    .form-floating .form-control {
+        height: 50px;
+        padding: 1rem 0.75rem 0 0.75rem;
+        border: 1px solid #ced4da;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .form-floating .form-control:focus {
+        box-shadow: none;
+        border: 2px solid #ff3d00;
+    }
+
+    .form-floating label {
+        position: absolute;
+        top: 50%;
+        left: 0.75rem;
+        transform: translateY(-50%);
+        background-color: white;
+        padding: 0 0.25rem;
+        font-size: 16px;
+        color: #6c757d;
+        pointer-events: none;
+        transition: all 0.2s ease-in-out;
+        height: 45% !important;
+        border-radius: 10px;
+    }
+    
+    .form-floating .form-control:focus + label,
+    .form-floating .form-control:not(:placeholder-shown) + label {
+        top: -10px;
+        left: 0.65rem;
+        font-size: 14px;
+        color: #ff3d00;
+    }
+
+    .form-floating .form-control::placeholder {
+        opacity: 0;
+    }
+
+
+/* Bootstrap */
