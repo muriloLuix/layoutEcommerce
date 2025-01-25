@@ -38,6 +38,27 @@
                     conta!</button>
             </form>
 
+            <!-- Modal para mensagens (Personalizadas) -->
+            @if(session('success') || session('error'))
+                <div class="custom-modal" id="feedbackModal">
+                    <div class="custom-modal-content">
+                        <img src="{{asset('img/modalImagens/echoVerde.svg')}}" alt="Echo Verde">
+                        <h1>Erro de Login</h1>
+                        <p>
+                            @if(session('success'))
+                                {{ session('success') }}
+                            @elseif(session('error'))
+                                {{ session('error') }}
+                            @endif
+                        </p>
+                        <div class="buttonsModal">
+                            <a href="" class="forgetCredentials">Esqueci minhas credenciais</a>
+                            <a href="" class="tryAgain">Tentar novamente</a>
+                        </div>
+                    </div>
+                </div>
+            @endif
+
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog">
@@ -68,7 +89,6 @@
                                     <label for="telefone">Telefone</label>
                                     <input type="tel" name="usu_telefone" id="telefone" required>
                                 </div>
-                                
                                 <button type="submit" class="btn btn-primary btnEnviar">Enviar</button>
                             </form>
 
@@ -81,20 +101,20 @@
             </div>
 
             @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
-        @if (session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
 
             {{-- @if ($errors->any())
             <div class="alert alert-danger">
