@@ -1,8 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\Usuario; // Certifique-se de importar o modelo correto
+use App\Models\Usuario; 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,15 +13,15 @@ class AuthController extends Controller
         // Validação dos campos do formulário
         $credentials = $request->validate([
             'usu_email' => ['required', 'email'],
-            'usu_senha' => ['required',],
+            'password' => ['required', 'string', 'min:8'], 
         ]);
-
+        
         // Autentica com os campos personalizados
-        if (Auth::attempt(['usu_email' => $credentials['usu_email'], 'password' => $credentials['usu_senha']], $request->remember)) {
+        if (Auth::attempt(['usu_email' => $credentials['usu_email'], 'password' => $credentials['password']], $request->remember)) {
             $request->session()->regenerate();
             return redirect()->intended('/');
         }
-
+        
         // Retorna erro caso as credenciais estejam incorretas
         return back()->withErrors([
             'usu_email' => 'As credenciais fornecidas estão incorretas.',

@@ -21,4 +21,10 @@ class Usuario extends Authenticatable
     {
         $this->attributes['usu_senha'] = bcrypt($value);
     }
+
+    // Accessor para que o Laravel use 'password' como alias de 'usu_senha'
+    public function getAuthPassword()
+    {
+        return $this->usu_senha;
+    }
 }

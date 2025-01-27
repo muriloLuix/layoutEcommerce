@@ -20,6 +20,7 @@ Route::get('/admin', function () {
 
 Route::post('/login', [AuthController::class, 'authenticate'])->name('login.submit');
 
+
 Route::post('/register', [AuthController::class, 'register'])->name('register.submit');
 
 

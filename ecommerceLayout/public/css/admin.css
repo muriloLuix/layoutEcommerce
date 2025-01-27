@@ -430,19 +430,35 @@ main {
     justify-content: center;
 }
 
-.custom-modal h1{
+.modalCredentials{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-modal h1,
+.modalCredentials h1{
     font-family: var(--montserrat);
     color: var(--preto-75);
     font-weight: 700;
 }
 
-.custom-modal p{
+.custom-modal p,
+.modalCredentials p{
     font-family: var(--montserrat);
     color: var(--preto-75);
     font-weight: 500;
 }
 
-.custom-modal-content {
+.custom-modal-content,
+.modal-credentials-content {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -471,6 +487,7 @@ main {
     font-family: var(--montserrat);
     font-weight: 600;
     padding: 20px;
+    border: none;
 }
 
 .tryAgain{
@@ -483,7 +500,12 @@ main {
     padding: 20px;
 }
 
-.custom-modal.show .custom-modal-content {
+.tryAgainForget{
+    width: 100% !important;
+}
+
+.custom-modal.show .custom-modal-content,
+.modalCredentials.show .modal-credentials-content {
     transform: scale(1); 
     opacity: 1;
 }
