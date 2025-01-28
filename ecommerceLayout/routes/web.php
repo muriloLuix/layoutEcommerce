@@ -18,7 +18,9 @@ Route::get('/admin', function () {
     return view('admin');
 })->name('admin');
 
-Route::post('/login', [AuthController::class, 'authenticate'])->name('login.submit');
+Route::middleware('web')->group(function () {
+    Route::post('/login', [AuthController::class, 'authenticate'])->name('login.submit');
+});
 
 
 Route::post('/register', [AuthController::class, 'register'])->name('register.submit');

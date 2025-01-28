@@ -22,6 +22,8 @@ class AuthController extends Controller
             return redirect()->intended('/');
         }
         
+
+        
         // Retorna erro caso as credenciais estejam incorretas
         return back()->withErrors([
             'usu_email' => 'As credenciais fornecidas estão incorretas.',
