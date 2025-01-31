@@ -15,20 +15,24 @@ class AuthController extends Controller
             'usu_email' => ['required', 'email'],
             'password' => ['required', 'string', 'min:8'], 
         ]);
-        
-        // Autentica com os campos personalizados
-        if (Auth::attempt(['usu_email' => $credentials['usu_email'], 'password' => $credentials['password']], $request->remember)) {
+    
+        $remember = $request->has('remember'); // Verifica se "Lembrar o acesso" foi marcado
+    
+        // Tenta autenticar o usuário
+        if (Auth::attempt(['usu_email' => $credentials['usu_email'], 'password' => $credentials['password']], $remember)) {
             $request->session()->regenerate();
-            return redirect()->intended('/');
+    
+            // Atualiza o campo usu_lembrar_acesso no banco de dados
+            Usuario::where('usu_email', $request->usu_email)->update(['usu_lembrar_acesso' => $remember]);
+    
+            return redirect()->intended('/dashboard'); // Redireciona para a área logada
         }
-        
-
-        
-        // Retorna erro caso as credenciais estejam incorretas
+    
         return back()->withErrors([
             'usu_email' => 'As credenciais fornecidas estão incorretas.',
         ]);
     }
+    
 
     // Método para registrar um novo usuário
     public function register(Request $request)
@@ -51,7 +55,7 @@ class AuthController extends Controller
             Usuario::create([
                 'usu_nome' => $request->usu_nome,
                 'usu_email' => $request->usu_email,
-                'usu_senha' => $request->usu_senha, // O mutator cuidará do hash
+                'usu_senha' => bcrypt($request->usu_senha), // Garante o hash da senha
                 'usu_telefone' => $request->usu_telefone,
             ]);
     
@@ -60,5 +64,4 @@ class AuthController extends Controller
             return redirect()->back()->with('error', 'Erro ao cadastrar o usuário: ' . $e->getMessage());
         }
     }
-    
 }

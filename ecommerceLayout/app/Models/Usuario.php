@@ -11,7 +11,7 @@ class Usuario extends Authenticatable
     public $timestamps = false; // Defina como false se não usar 'created_at' e 'updated_at'
 
     // Campos que podem ser preenchidos automaticamente
-    protected $fillable = ['usu_nome', 'usu_email', 'usu_senha', 'usu_telefone'];
+    protected $fillable = ['usu_nome', 'usu_email', 'usu_senha', 'usu_telefone', 'usu_lembrar_acesso'];
 
     // Oculta o campo 'usu_senha' ao serializar o modelo
     protected $hidden = ['usu_senha'];
@@ -26,5 +26,21 @@ class Usuario extends Authenticatable
     public function getAuthPassword()
     {
         return $this->usu_senha;
+    }
+
+    // Sobrescrevendo o comportamento padrão do Laravel para "Lembrar-me"
+    public function getRememberToken()
+    {
+        return $this->usu_lembrar_acesso;
+    }
+
+    public function setRememberToken($value)
+    {
+        $this->attributes['usu_lembrar_acesso'] = $value;
+    }
+
+    public function getRememberTokenName()
+    {
+        return 'usu_lembrar_acesso';
     }
 }

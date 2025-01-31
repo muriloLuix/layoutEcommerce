@@ -19,6 +19,7 @@
     --montserrat: 'Montserrat', sans-serif;
     --bg-branco: #F5F5F7;
     --preto-75: #000000bf;
+    --laranja: #FF3C00;
 }
 
 body {
@@ -99,50 +100,29 @@ nav {
     color: #00796b;
 }
 
-.telefone {
-    font-size: 0.9rem;
-    color: #666;
-    margin-right: 20px;
-}
-
 .button {
     display: flex;
     align-items: center;
     gap: 2vw;
 }
 
-.buttonsHeader{
+.buttonsHeader {
     display: flex;
     gap: 1vw;
 }
 
-.button .btn-saiba-mais {
-    background-color: #4CAF50;
+.button .btn-geral {
+    background-color: var(--laranja);
     color: #fff;
-    text-decoration: none;
     font-size: 0.9rem;
     padding: 8px 16px;
     border-radius: 20px;
     transition: all .3s ease;
-}
-
-.button .btn-saiba-mais:hover {
-    background-color: #457548;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.button .btn-carrinho {
-    background-color: #7B7B7C;
-    color: #fff;
     text-decoration: none;
-    font-size: 0.9rem;
-    padding: 8px 16px;
-    border-radius: 20px;
-    transition: all .3s ease;
 }
 
-.button .btn-carrinho:hover {
-    background-color: #b6b6b8;
+.button .btn-geral:hover {
+    background-color: #fd5d2c;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -181,7 +161,7 @@ nav {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 4rem;
-    background: linear-gradient(90deg, #4CAF50, #26A69A, #1E88E5);
+    background: linear-gradient(90deg, rgba(255, 60, 0, 1) 0%, rgba(155, 36, 88, 1) 52%, rgba(155, 36, 38, 1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -225,7 +205,7 @@ nav {
 }
 
 .greenDuvida {
-    color: #41A131;
+    color: var(--laranja);
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -236,20 +216,82 @@ nav {
 .banner {
     width: 100%;
     height: auto;
+    background-color: #fff;
+    border-radius: 20px;
+    margin: 0 auto;
+    max-width: 76vw;
+    position: relative;
+    /* Para garantir que os elementos filhos absolutos fiquem dentro */
 }
 
 .bannerContent {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 12vh auto;
+    flex-direction: column;
+    /* Mantém a imagem no centro */
+    position: relative;
     max-width: 76vw;
+    padding: 5vh 0;
 }
 
-.bannerContent img {
-    width: 70vw;
+.logoEcho {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+    /* Ajuste conforme necessário */
     height: auto;
 }
+
+.produtoBanner {
+    width: 70vw;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.btnAlterar {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: var(--laranja);
+    color: #fff;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--montserrat);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5vw;
+    font-weight: 300;
+}
+
+.btnAlterar:hover {
+    background-color: #fd5d2c;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .logoEcho {
+        width: 80px;
+        /* Ajusta a logo em telas menores */
+    }
+
+    .produtoBanner {
+        width: 90%;
+        /* Mantém proporcional em telas menores */
+    }
+
+    .btnAlterar {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+
 
 /* Banner  */
 
@@ -262,7 +304,7 @@ nav {
     max-width: 76vw;
 }
 
-.fa-cart-shopping{
+.fa-cart-shopping {
     margin-right: 8px;
 }
 
@@ -280,6 +322,31 @@ nav {
 .sobreNosLight,
 .lojaLight {
     color: #00000081;
+}
+
+.btnFeedback {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btnFeedback button{
+    background-color: var(--laranja);
+    color: #fff;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--montserrat);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5vw;
+    font-weight: 300;
+}
+
+.btnFeedback button:hover{
+    background-color: #fd5d2c;
 }
 
 /* feedbackCarousel */
@@ -327,7 +394,7 @@ nav {
 }
 
 .comentariosClientes {
-    flex: 0 0 100%;
+    flex: 0 0 97%;
     text-align: center;
 }
 
@@ -357,7 +424,7 @@ nav {
 }
 
 .carousel-btn:hover i {
-    color: #4caf50;
+    color: var(--laranja);
 }
 
 
@@ -378,7 +445,7 @@ nav {
 }
 
 .dots span.active {
-    background-color: #4caf50;
+    background-color: var(--laranja);
 }
 
 
@@ -459,13 +526,13 @@ nav {
 }
 
 .btnVerProduto {
-    background-color: #4caf50;
+    background-color: var(--laranja);
     color: #fff;
     font-size: 14px;
     font-weight: 600;
     border: none;
     padding: 10px 15px;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     align-self: flex-end;
     transition: background-color 0.3s ease;
@@ -474,7 +541,35 @@ nav {
 }
 
 .btnVerProduto:hover {
-    background-color: #45a049;
+    background-color: #fd5d2c;
+}
+
+.btnLoja {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.btnLoja a{
+    background-color: var(--laranja);
+    color: #fff;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--montserrat);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5vw;
+    font-weight: 300;
+    width: 100%;
+    text-decoration: none;
+}
+
+.btnLoja a:hover{
+    background-color: #fd5d2c;
 }
 
 /* Loja */
@@ -561,7 +656,7 @@ p {
 /* copyright */
 
 .copyright {
-    background-color: #349B24;
+    background-color: var(--laranja);
     width: 100vw;
     height: auto;
     display: flex;

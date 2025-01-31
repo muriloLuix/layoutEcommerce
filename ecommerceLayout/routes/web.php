@@ -18,6 +18,18 @@ Route::get('/admin', function () {
     return view('admin');
 })->name('admin');
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
+Route::get('/hub-de-alteracoes', function () {
+    return view('hub-de-alteracoes');
+})->name('hub-de-alteracoes');
+
+Route::get('/adicionar-produto', function () {
+    return view('adicionar-produto');
+})->name('adicionar-produto');
+
 Route::middleware('web')->group(function () {
     Route::post('/login', [AuthController::class, 'authenticate'])->name('login.submit');
 });
