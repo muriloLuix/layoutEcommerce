@@ -42,7 +42,6 @@
             <!-- Botão -->
             <div class="button">
                 <div class="buttonsHeader">
-                    <a href="" class="btn-geral">Configuração</a>
                     <a href="" class="btn-geral">Dev Mode</a>
                 </div>
             </div>

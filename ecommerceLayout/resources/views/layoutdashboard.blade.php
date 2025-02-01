@@ -50,8 +50,8 @@
             <!-- Botão -->
             <div class="button">
                 <div class="buttonsHeader">
-                    <a href="" class="btn-geral">Configuração</a>
-                    <a href="" class="btn-geral">Adicionar/Apagar Produtos</a>
+                    <a href="/configuracao" class="btn-geral">Configuração</a>
+                    <a href="/hub-de-alteracoes" class="btn-geral">Adicionar/Apagar Produtos</a>
                     <a href="" class="btn-geral">Nome do Usuário</a>
                 </div>
             </div>

@@ -20,46 +20,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     {{-- Font Awesome --}}
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    {{-- Scripts --}}
-    @yield('scripts')
     {{-- Favicon --}}
     <link rel="icon" href="{{ asset('img/favicon/IconeLaranja.svg') }}" type="image/x-icon">
     {{-- Css --}}
-    <link rel="stylesheet" href="{{asset('css/adicionarstatus.css')}}">
-    <title>@yield('title', '| Adicionar Status')</title>
+    <link rel="stylesheet" href="{{asset('css/editarstatus.css')}}">
+    <title>@yield('title', '| Editar Status')</title>
 </head>
 
+
 <body>
-    <header>
-        <nav>
-            <div class="leftSide">
-                <!-- Logo -->
-                <div class="logo">
-                    <a href="/dashboard"> <img src="{{ asset('img/logoEcho/logoEchoLaranja.svg') }}"
-                            alt="Logo Echo"></a>
-                </div>
 
-            </div>
-
-            <!-- Botão -->
-            <div class="button">
-                <div class="buttonsHeader">
-                    <a href="/configuracao" class="btn-geral">Configuração</a>
-                    <a href="" class="btn-geral">Dev Mode</a>
-                </div>
-            </div>
-
-            <!-- Menu Hambúrguer -->
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
-    <main>
-        @yield('content')
-    </main>
 </body>
 
 </html>

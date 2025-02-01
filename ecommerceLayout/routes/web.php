@@ -3,6 +3,7 @@
 use App\Http\Controllers\ControllerPrincipal;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\StatusController;
 
 
 // Rota usando o controlador
@@ -41,6 +42,12 @@ Route::get('/adicionar-status', function () {
 Route::middleware('web')->group(function () {
     Route::post('/login', [AuthController::class, 'authenticate'])->name('login.submit');
 });
+
+// Rota para adicionar status
+Route::post('/adicionar-status', [StatusController::class, 'adicionarStatus'])->name('status.adicionar');
+
+// Rota para lista de status (supondo que você tenha essa página)
+Route::get('/editar-status', [StatusController::class, 'index'])->name('editar-status');
 
 
 Route::post('/register', [AuthController::class, 'register'])->name('register.submit');

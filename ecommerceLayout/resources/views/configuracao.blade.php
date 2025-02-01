@@ -15,10 +15,10 @@
             <a href="">
                 <li>Historico</li>
             </a>
-            <a href="">
+            <a href="/editar-produto">
                 <li>Editar produto</li>
             </a>
-            <a href="">
+            <a href="/adicionar-produto">
                 <li>Adicionar produto</li>
             </a>
             <a href="/adicionar-status">
