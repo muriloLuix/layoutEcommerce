@@ -23,8 +23,8 @@
     {{-- Favicon --}}
     <link rel="icon" href="{{ asset('img/favicon/IconeLaranja.svg') }}" type="image/x-icon">
     {{-- Css --}}
-    <link rel="stylesheet" href="{{asset('css/addproduto.css')}}">
-    <title>@yield('title', '| Adicionar Produto')</title>
+    <link rel="stylesheet" href="{{asset('css/adicionarstatus.css')}}">
+    <title>@yield('title', '| Configurações')</title>
 </head>
 
 <body>
@@ -56,7 +56,6 @@
         </nav>
     </header>
     <main>
-        {{-- O conteúdo da página é injetado aqui --}}
         @yield('content')
     </main>
 </body>

@@ -23,8 +23,8 @@
     {{-- Favicon --}}
     <link rel="icon" href="{{ asset('img/favicon/IconeLaranja.svg') }}" type="image/x-icon">
     {{-- Css --}}
-    <link rel="stylesheet" href="{{asset('css/addproduto.css')}}">
-    <title>@yield('title', '| Adicionar Produto')</title>
+    <link rel="stylesheet" href="{{asset('css/config.css')}}">
+    <title>@yield('title', '| Configurações')</title>
 </head>
 
 <body>
@@ -42,7 +42,7 @@
             <!-- Botão -->
             <div class="button">
                 <div class="buttonsHeader">
-                    <a href="/configuracao" class="btn-geral">Configuração</a>
+                    <a href="" class="btn-geral">Configuração</a>
                     <a href="" class="btn-geral">Dev Mode</a>
                 </div>
             </div>

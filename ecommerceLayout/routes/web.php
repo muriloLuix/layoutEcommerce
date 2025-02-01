@@ -30,6 +30,14 @@ Route::get('/adicionar-produto', function () {
     return view('adicionar-produto');
 })->name('adicionar-produto');
 
+Route::get('/configuracao', function () {
+    return view('configuracao');
+})->name('configuracao');
+
+Route::get('/adicionar-status', function () {
+    return view('adicionar-status');
+})->name('adicionar-status');
+
 Route::middleware('web')->group(function () {
     Route::post('/login', [AuthController::class, 'authenticate'])->name('login.submit');
 });
