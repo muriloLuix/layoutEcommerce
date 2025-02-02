@@ -4,6 +4,8 @@ use App\Http\Controllers\ControllerPrincipal;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\StatusController;
+use App\Http\Controllers\ProdutoController;
+
 
 
 // Rota usando o controlador
@@ -27,10 +29,6 @@ Route::get('/hub-de-alteracoes', function () {
     return view('hub-de-alteracoes');
 })->name('hub-de-alteracoes');
 
-Route::get('/adicionar-produto', function () {
-    return view('adicionar-produto');
-})->name('adicionar-produto');
-
 Route::get('/configuracao', function () {
     return view('configuracao');
 })->name('configuracao');
@@ -43,12 +41,14 @@ Route::middleware('web')->group(function () {
     Route::post('/login', [AuthController::class, 'authenticate'])->name('login.submit');
 });
 
-// Rota para adicionar status
+Route::get('/adicionar-produto', [ProdutoController::class, 'adicionarProduto'])->name('adicionar-produto');
+
+
+Route::get('/status/create', [StatusController::class, 'create'])->name('status.create');
+
 Route::post('/adicionar-status', [StatusController::class, 'adicionarStatus'])->name('status.adicionar');
 
-// Rota para lista de status (supondo que você tenha essa página)
 Route::get('/editar-status', [StatusController::class, 'index'])->name('editar-status');
-
 
 Route::post('/register', [AuthController::class, 'register'])->name('register.submit');
 

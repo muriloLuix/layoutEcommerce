@@ -34,9 +34,15 @@
 
                 <div class="input-group">
                     <label for="prod_status" class="input-label">Status do prod.:</label>
-                    <select name="prod_status" id="prod_status"></select>
+                    <select name="prod_status" id="prod_status" class="form-control">
+                        <option value=""></option>
+                        @foreach($statusList as $status)
+                            <option value="{{ $status->sta_id }}">{{ $status->sta_nome }}</option>
+                        @endforeach
+                    </select>
                 </div>
-
+                
+                
                 <label for="prod_descricao" class="input-label labelDesc">Descrição do produto:
                     <div class="hr"></div>
                     <textarea name="prod_descricao" id="prod_descricao" class="text-field"></textarea>

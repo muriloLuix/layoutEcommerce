@@ -8,36 +8,29 @@ use DB;
 class StatusController extends Controller
 {
     public function adicionarStatus(Request $request)
-{
-    // Validação (opcional)
-    $request->validate([
-        'sta_nome' => 'required|string|max:255',
-    ], [
-        'sta_nome.required' => 'O campo status é obrigatório.'
-    ]);
+    {
+        // Validação (opcional)
+        $request->validate([
+            'sta_nome' => 'required|string|max:255',
+        ], [
+            'sta_nome.required' => 'O campo status é obrigatório.'
+        ]);
 
-    // Recuperando o valor do campo "sta_nome"
-    $sta_nome = $request->input('sta_nome');
-    
-    // Inserção no banco de dados
-    $inserted = DB::table('status')->insert([
-        'sta_nome' => $sta_nome,
-    ]);
+        // Recuperando o valor do campo "sta_nome"
+        $sta_nome = $request->input('sta_nome');
 
-    if ($inserted) {
-        // Em vez de redirecionar, vamos retornar à página atual com a mensagem de sucesso
-        return back()->with('success', 'Seu status foi <span class="criado">Criado</span> com sucesso!');
-    } else {
-        return back()->with('error', 'Erro ao adicionar status.');
+        // Inserção no banco de dados
+        $inserted = DB::table('status')->insert([
+            'sta_nome' => $sta_nome,
+        ]);
+
+        if ($inserted) {
+            // Em vez de redirecionar, vamos retornar à página atual com a mensagem de sucesso
+            return back()->with('success', 'Seu status foi <span class="criado">Criado</span> com sucesso!');
+        } else {
+            return back()->with('error', 'Erro ao adicionar status.');
+        }
     }
-}
-
-    
-
-
-
-
-
     // Adicionando o método 'index' para listar os status
     public function index()
     {
@@ -45,4 +38,11 @@ class StatusController extends Controller
 
         return view('editar-status', ['statusList' => $statusList]);
     }
+
+    public function create()
+    {
+        $statusList = DB::table('status')->get(); // Busca os status no banco
+        return view('produtos.create', compact('statusList')); // Envia os status para a view
+    }
+
 }

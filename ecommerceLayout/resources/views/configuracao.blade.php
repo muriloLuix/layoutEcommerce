@@ -13,17 +13,35 @@
     <nav>
         <ul>
             <a href="">
-                <li>Historico</li>
+                <li>Histórico</li>
             </a>
-            <a href="/editar-produto">
-                <li>Editar produto</li>
-            </a>
-            <a href="/adicionar-produto">
-                <li>Adicionar produto</li>
-            </a>
-            <a href="/adicionar-status">
-                <li>Adicionar status</li>
-            </a>
+
+            {{-- Dropdown do Produto --}}
+            <li class="dropdown">
+                <span class="dropdown-toggle">Produto</span>
+                <ul class="dropdown-menu">
+                    <a href="/adicionar-produto">
+                        <li>Adicionar produto</li>
+                    </a>
+                    <a href="/editar-produto">
+                        <li>Editar produto</li>
+                    </a>
+                </ul>
+            </li>
+
+            <!-- Dropdown do Status -->
+            <li class="dropdown">
+                <span class="dropdown-toggle">Status</span>
+                <ul class="dropdown-menu">
+                    <a href="/adicionar-status">
+                        <li>Adicionar status</li>
+                    </a>
+                    <a href="/editar-status">
+                        <li>Editar status</li>
+                    </a>
+                </ul>
+            </li>
+
             <a href="">
                 <li>Sair da conta</li>
             </a>
