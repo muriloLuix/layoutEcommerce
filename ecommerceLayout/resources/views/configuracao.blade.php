@@ -42,6 +42,20 @@
                 </ul>
             </li>
 
+            <li class="dropdown">
+                <span class="dropdown-toggle">
+                    Categoria
+                </span>
+                <ul class="dropdown-menu">
+                    <a href="/adicionar-categoria">
+                        <li>Adicionar categoria</li>
+                    </a>
+                    <a href="/editar-categoria">
+                        <li>Editar categoria</li>
+                    </a>
+                </ul>
+            </li>
+
             <a href="">
                 <li>Sair da conta</li>
             </a>

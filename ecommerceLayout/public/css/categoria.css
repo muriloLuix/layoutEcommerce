@@ -1,0 +1,384 @@
+@charset "UTF-8";
+
+/* Google Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* Google Fonts */
+
+/* General Style */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --montserrat: 'Montserrat', sans-serif;
+    --bg-branco: #F5F5F7;
+    --preto-75: #000000bf;
+    --laranja: #FF3C00;
+}
+
+body {
+    background-color: var(--bg-branco);
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--preto-75);
+    transition: 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+}
+
+::-webkit-scrollbar-thumb:focus {
+    border-radius: 20px;
+}
+
+/* General Style */
+
+
+/* Header Style */
+
+header {
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px 20px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 76vw;
+    margin: 0 auto;
+    height: 8vh;
+}
+
+.hamburger {
+    display: none;
+}
+
+.leftSide {
+    display: flex;
+    align-items: center;
+    gap: 5vw;
+}
+
+.logo img {
+    height: 2vh;
+    display: block;
+}
+
+.navigation ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    gap: 4rem;
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    color: #444;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navigation ul li a:hover {
+    color: #00796b;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+.buttonsHeader {
+    display: flex;
+    gap: 1vw;
+}
+
+.button .btn-geral {
+    background-color: var(--laranja);
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all .3s ease;
+    text-decoration: none;
+}
+
+.button .btn-geral:hover {
+    background-color: #fd5d2c;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Style */
+
+/* general */
+
+.general {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 76vw;
+    margin: 0 auto;
+}
+
+.general h1 {
+    font-family: var(--montserrat);
+    color: var(--preto-75);
+    font-weight: 600;
+}
+
+.btn-voltar {
+    text-decoration: none;
+    color: var(--preto-75);
+    transition: all .3s ease;
+}
+
+.btn-voltar:hover {
+    color: var(--laranja);
+}
+
+/* general */
+
+/* cardStatus */
+
+.generalCategory {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 76vw;
+    margin: 0 auto;
+    margin-top: 4em;
+    width: 100%;
+    height: 43vh;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.btnEditar {
+    width: 100%;
+    margin-top: auto;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
+    width: 100%;
+    height: 100%;
+}
+
+form .btnEditar button {
+    width: 100%;
+    padding: 3px;
+    border: none;
+    background-color: var(--laranja);
+    color: white;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .3s ease;
+    font-family: var(--montserrat);
+}
+
+.btnEditar button:hover {
+    background-color: #fd5d2c;
+}
+
+.floating-label {
+    position: relative;
+    width: 100%;
+    top: 7em;
+    font-family: var(--montserrat);
+}
+
+.floating-label input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+/* Oculta visualmente o placeholder */
+.floating-label input::placeholder {
+    color: transparent;
+}
+
+.floating-label label {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    padding: 0 5px;
+    font-size: 16px;
+    color: #777;
+    transition: 0.3s ease all;
+    pointer-events: none;
+}
+
+/* Quando o input estiver focado ou tiver texto, a label sobe */
+.floating-label input:focus+label,
+.floating-label input:not(:placeholder-shown)+label {
+    top: 0;
+    font-size: 13px;
+    color: var(--laranja);
+}
+
+.floating-label input:focus {
+    border-color: var(--laranja);
+}
+
+
+/* cardStatus */
+
+/* Estilos do modal */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    transition: opacity 0.3s ease;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    animation: fadeIn 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.criado {
+    color: #0165FC;
+    font-weight: bolder;
+}
+
+.modal-content img {
+    width: 11em;
+    height: auto;
+}
+
+.close-btn {
+    color: #aaa;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.sucessButton {
+    background-color: #0165FC;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    width: 100%;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: var(--montserrat);
+}
+
+.sucessButton:hover {
+    background-color: #3480f3;
+}
+
+.errorButton {
+    background-color: #CA0F00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    width: 100%;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: var(--montserrat);
+}
+
+.errorButton:hover {
+    background-color: #850c03;
+}
+
+.h1Erro {
+    font-family: var(--montserrat);
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #CA0F00;
+    letter-spacing: 2px;
+}
+
+h2 {
+    color: var(--preto-75);
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    font-family: var(--montserrat);
+    font-weight: bolder;
+}

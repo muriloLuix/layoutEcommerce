@@ -10,11 +10,10 @@ class ProdutoController extends Controller
     public function adicionarProduto()
     {
         $statusList = DB::table('status')->get(); // Buscar os status no banco
+        $categoriaList = DB::table('categoria')->get(); // Buscar as categorias no banco
     
-    
-        return view('adicionar-produto', compact('statusList'));
+        // Passar ambas as listas para a view corretamente
+        return view('adicionar-produto', compact('statusList', 'categoriaList'));
     }
-    
-    
-    
 }
+

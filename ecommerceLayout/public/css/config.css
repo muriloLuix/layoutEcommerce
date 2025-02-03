@@ -209,15 +209,15 @@ nav {
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    min-width: 150px; /* Define um tamanho mínimo */
-    width: auto; /* Largura automática */
+    min-width: 150px; 
+    width: auto; 
     padding: 10px;
     opacity: 0;
     visibility: hidden;
     transform: translateX(-10px);
     transition: all 0.3s ease-in-out;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    white-space: nowrap; /* Evita que o texto quebre em várias linhas */
+    white-space: nowrap; 
 }
 
 

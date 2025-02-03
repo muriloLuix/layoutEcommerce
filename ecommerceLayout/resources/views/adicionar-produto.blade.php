@@ -29,7 +29,12 @@
 
                 <div class="input-group">
                     <label for="prod_categoria_id" class="input-label">Catego. do prod.:</label>
-                    <select name="prod_categoria_id" id="prod_categoria_id"></select>
+                    <select name="prod_categoria_id" id="prod_categoria_id">
+                        <option value=""></option>
+                        @foreach ($categoriaList as $categoria)
+                            <option value="{{ $categoria->cat_id }}">{{ $categoria->cat_nome }}</option>
+                        @endforeach
+                    </select>
                 </div>
 
                 <div class="input-group">
